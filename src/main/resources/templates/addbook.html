@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Add New Books Information</title>
+    </head>
+    <body>
+        <h1>Add New Books</h1>
+        <form action="#" th:action="@{/addbook}" th:object="${newBook}" method="post">
+            <p>Enter Book Id:<input type="text" th:field="*{id}" />
+                <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Id Error</span>
+            </p>
+            <p>Enter Book SKU:<input type="text" th:field="*{sku}" />
+                <span th:if="${#fields.hasErrors('sku')}" th:errors="*{sku}">SKU Error</span>
+            </p>
+            <p>Enter Book Title:<input type="text" th:field="*{bookTitle}" />
+                <span th:if="${#fields.hasErrors('bookTitle')}" th:errors="*{bookTitle}">Book Title Error</span>
+            </p>
+            <p>Enter Book Author:<input type="text" th:field="*{bookAuthor}" />
+                <span th:if="${#fields.hasErrors('bookAuthor')}" th:errors="*{bookAuthor}">Book Author Error</span>
+            </p>
+            <p>Enter Book Category:<input type="text" th:field="*{bookCategories}" />
+                <span th:if="${#fields.hasErrors('bookCategories')}" th:errors="*{bookCategories}">Book Categories Error</span>
+            </p>
+            <p>Enter Book Description:<input type="text" th:field="*{bookDescr}" />
+                <span th:if="${#fields.hasErrors('bookDescr')}" th:errors="*{bookDescr}">Book Description Error</span>
+            </p>
+            <p>Enter Book Price:<input type="text" th:field="*{bookPrice}" />
+                <span th:if="${#fields.hasErrors('bookPrice')}" th:errors="*{bookPrice}">Book Price Error</span>
+            </p>
+            <p>
+                <input type="submit" value="Add New Book" />
+                <input type="reset" value="Reset" />
+            </p>
+        </form>
+    </body>
+</html>
